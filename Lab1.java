@@ -10,33 +10,58 @@ public class Lab1 {
 
         // Prompt user for month and day
         System.out.print("Enter month and day (MM/DD): ");
-        String[] userInput = scnr.nextLine().split("/");
+        String[] userInput = fetchInput(scnr);
+
+        // Stores month and day
+        int month = fetchDate(userInput[0]);
+        int day = fetchDate(userInput[1]);
 
         // Check if month and day are valid
-        boolean validMonth = false;
-        boolean validDay = false;
-        int month = Integer.parseInt(userInput[0]);
-        int day = Integer.parseInt(userInput[1]);
-        while (!validMonth || !validDay) {
-            if (month < 1 || month > 12) {
-                System.out.print("Invalid month. Please enter a valid month: ");
-                month = scnr.nextInt();
-                continue;
-            } else {
-                validMonth = true;
-            }
-
-            if (day < 1 || day > 31) {
-                System.out.print("Invalid day. Please enter a valid day: ");
-                day = scnr.nextInt();
-                continue;
-            } else {
-                validDay = true;
-            }
+        boolean validMonth = isValidMonth(month);
+        boolean validDay = isValidDay(day);
+        while (!validMonth) {
+            System.out.print("Invalid month. Please enter a valid month: ");
+            month = scnr.nextInt();
+            validMonth = isValidMonth(month);
+        }
+        while (!validDay) {
+            System.out.print("Invalid day. Please enter a valid day: ");
+            day = scnr.nextInt();
+            validDay = isValidDay(day);
         }
 
-        // Determines season
-        String season;
+        // Determines and prints the season
+        if (validMonth && validDay) {
+            System.out.printf("Your date of %s/%s takes place in the %s.\n", month, day, determineSeason(month, day));
+        }
+
+        // Close scanner
+        scnr.close();
+    }
+
+    // Reads user input and returns it as a String array
+    public static String[] fetchInput(Scanner scnr) {
+        return scnr.nextLine().split("/");
+    }
+
+    // Fetches date from user input
+    public static int fetchDate(String date) {
+        return Integer.parseInt(date);
+    }
+
+    // Checks if month is valid
+    public static boolean isValidMonth(int month) {
+        return (1 <= month && month <= 12);
+    }
+
+    // Checks if day is valid
+    public static boolean isValidDay(int day) {
+        return (1 <= day && day <= 31);
+    }
+
+    // Determines season based on month and day
+    public static String determineSeason(int month, int day) {
+        String season = "";
         if (month >= 3 && month <= 6) {
             if (month == 3 && day <= 20) {
                 season = "Winter";
@@ -60,11 +85,6 @@ public class Lab1 {
                 season = "Winter";
             }
         }
-
-        // Print results
-        System.out.printf("Season: %s\n", season);
-
-        // Close scanner
-        scnr.close();
+        return season;
     }
 }
