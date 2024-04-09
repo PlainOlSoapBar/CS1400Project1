@@ -11,17 +11,7 @@ public class Lab2 {
         Scanner scnr = new Scanner(System.in);
 
         // Prompt user for number of customers (max of 40)
-        int numberOfCustomers = -1;
-        boolean validNum = false;
-        while (!validNum) {
-            System.out.print("Enter the number of customers (Max 40): ");
-            numberOfCustomers = scnr.nextInt();
-            if (numberOfCustomers > 0 && numberOfCustomers <= 40) {
-                validNum = true;
-            } else {
-                System.out.println("Invalid number of customers. Please enter a number between 1 and 40.");
-            }
-        }
+        int numberOfCustomers = fetchNumberOfCustomers(scnr);
         scnr.close();
 
         String[] customerNames = new String[numberOfCustomers];
@@ -69,5 +59,22 @@ public class Lab2 {
             System.out.println("State: " + states[i]);
             System.out.println();
         }
+    }
+
+    public static int fetchNumberOfCustomers(Scanner scnr) {
+        int numberOfCustomers = -1;
+        boolean validNum = false;
+
+        while (!validNum) {
+            System.out.print("Enter the number of customers (Max 40): ");
+            numberOfCustomers = scnr.nextInt();
+            if (numberOfCustomers > 0 && numberOfCustomers <= 40) {
+                validNum = true;
+            } else {
+                System.out.println("Invalid number of customers. Please enter a number between 1 and 40.");
+            }
+        }
+
+        return numberOfCustomers;
     }
 }
