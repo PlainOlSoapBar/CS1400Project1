@@ -10,8 +10,11 @@ public class Lab2 {
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
 
-        // Prompt user for number of customers (max of 40)
-        int numberOfCustomers = fetchNumberOfCustomers(scnr);
+        // Prompt user for inputs
+        int numberOfCustomers = fetchNumberOfCustomers(scnr); // Max 40
+        int debtLimit = fetchDebtLimit(scnr);
+        String searchPhrase = fetchSearchPhrase(scnr);
+        String stateAbbreviation = fetchStateAbbreviation(scnr);
         scnr.close();
 
         String[] customerNames = new String[numberOfCustomers];
@@ -59,20 +62,58 @@ public class Lab2 {
         }
     }
 
+    // Fetches the number of customers from the user
     public static int fetchNumberOfCustomers(Scanner scnr) {
-        int numberOfCustomers = -1;
-        boolean validNum = false;
-
-        while (!validNum) {
-            System.out.print("Enter the number of customers (Max 40): ");
-            numberOfCustomers = scnr.nextInt();
-            if (numberOfCustomers > 0 && numberOfCustomers <= 40) {
-                validNum = true;
-            } else {
-                System.out.println("Invalid number of customers. Please enter a number between 1 and 40.");
-            }
+        int numberOfCustomers = 0;
+        System.out.print("Enter the number of customers (Max 40): ");
+        numberOfCustomers = scnr.nextInt();
+        if (numberOfCustomers < 1 || 40 < numberOfCustomers) {
+            System.out.println("Invalid number of customers. Please enter a number between 1 and 40.");
+            return fetchNumberOfCustomers(scnr);
         }
 
         return numberOfCustomers;
+    }
+
+    // Fetches the debt limit from the user
+    public static int fetchDebtLimit(Scanner scnr) {
+        int debtLimit = 0;
+
+        System.out.print("Enter the debt limit: ");
+        debtLimit = scnr.nextInt();
+        if (debtLimit < 1) {
+            System.out.println("Invalid debt limit. Please enter a number greater than 0.");
+            return fetchDebtLimit(scnr);
+        }
+
+        return debtLimit;
+    }
+
+    // Fetches the search phrase from the user
+    public static String fetchSearchPhrase(Scanner scnr) {
+        System.out.print("Enter the search phrase: ");
+        String searchPhrase = scnr.next();
+        if (!searchPhrase.matches("[a-zA-Z]+")) {
+            System.out.println("Invalid search phrase. Please enter only letters.");
+            return fetchSearchPhrase(scnr);
+        }
+        return capitalize(searchPhrase);
+    }
+
+    // Fetches the state abbreviation from the user
+    public static String fetchStateAbbreviation(Scanner scnr) {
+        System.out.print("Enter the state abbreviation: ");
+        String stateAbbreviation = scnr.next();
+        if (!stateAbbreviation.matches("[a-zA-Z]+") || stateAbbreviation.length() != 2) {
+            System.out.println("State abbreviation should only contain two letters.");
+            return fetchStateAbbreviation(scnr);
+        }
+
+        return stateAbbreviation.toUpperCase();
+    }
+
+    // Capitalizes the first letter of a string
+    public static String capitalize(String str) {
+        return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
     }
 }
