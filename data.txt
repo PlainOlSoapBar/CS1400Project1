@@ -1,0 +1,41 @@
+CustomerName|CreditCardDebt|State
+John Smith|1500|New York
+Sarah Johnson|0|California
+Michael Adams|500|Texas
+Emily Smith|0|Florida
+Samuel Brown|2000|California
+Samantha White|0|Texas
+David Lee|1000|New York
+Michelle Garcia|0|Florida
+Steven Martinez|750|Texas
+Sophia Rodriguez|0|California
+Daniel Hernandez|1200|New York
+Alexis Wilson|0|Texas
+Andrew Nguyen|800|California
+Gabriella King|0|Florida
+Ryan Thompson|250|Texas
+Brianna Lewis|0|New York
+Justin Hall|1800|California
+Lauren Allen|0|Florida
+Nathan Scott|600|Texas
+Olivia Green|0|New York
+Matthew Stewart|950|California
+Ava Turner|0|Texas
+Christopher Price|1300|New York
+Hailey Powell|0|Florida
+Joshua Lopez|850|Texas
+Ella Cooper|0|California
+Brandon Hill|1600|Florida
+Kayla Ward|0|Texas
+Jacob Morris|700|New York
+Madison Ross|0|California
+William Baker|1100|Texas
+Victoria Coleman|0|Florida
+Ethan Rivera|1050|New York
+Mia Bailey|0|California
+James Howard|1400|Texas
+Chloe Bell|0|Florida
+Dylan Long|800|New York
+Zoe Murphy|0|California
+Benjamin Nelson|1150|Texas
+Grace Gonzales|0|Florida
