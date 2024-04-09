@@ -24,26 +24,24 @@ public class Lab2 {
             Scanner scanner = new Scanner(file);
 
             boolean firstLine = true;
-            while (scanner.hasNextLine()) {
-                // Skips the first line which has the data labels
-                if (firstLine) {
-                    scanner.nextLine();
-                    firstLine = false;
-                }
+            // Skips the first line which has the data labels
+            if (firstLine) {
+                scanner.nextLine();
+                firstLine = false;
+            }
 
-                String line;
-                String[] parts;
+            String line;
+            String[] parts;
 
-                // Assuming the format is consistent (name, debt, state)
-                for (int i = 0; i < numberOfCustomers; i++) {
-                    line = scanner.nextLine();
-                    parts = line.split("\\|");
+            // Assign data to arrays
+            for (int i = 0; i < numberOfCustomers; i++) {
+                line = scanner.nextLine();
+                parts = line.split("\\|");
 
-                    if (parts.length == 3) {
-                        customerNames[i] = parts[0];
-                        creditCardDebts[i] = Integer.parseInt(parts[1]);
-                        states[i] = parts[2];
-                    }
+                if (parts.length == 3) {
+                    customerNames[i] = parts[0];
+                    creditCardDebts[i] = Integer.parseInt(parts[1]);
+                    states[i] = parts[2];
                 }
             }
 
