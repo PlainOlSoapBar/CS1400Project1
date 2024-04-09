@@ -1,6 +1,6 @@
 // Brandon Tseng
-// Project #1 Lab 1
-// April 13th, 2024
+// CS-1400
+// Project #1
 
 import java.util.Scanner;
 
