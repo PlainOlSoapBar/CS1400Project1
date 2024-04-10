@@ -55,15 +55,7 @@ public class Lab2 {
         }
 
         // Print results
-        System.out.println("=========================================");
-        System.out.println("U.S. Report");
-        System.out.printf("Customers: %d\n", numberOfCustomers);
-        System.out.printf("Highest debt: %s\n", findHighestDebt(customerNames, creditCardDebts));
-        System.out.printf("Number of customers whose names that start with \"%s\": %d\n", searchPhrase,
-                findSearchPhrase(customerNames, searchPhrase));
-        System.out.printf("Customers with debt over $%d: %d\n", debtLimit, findOverLimit(creditCardDebts, debtLimit));
-        System.out.printf("Customers debt free: %d\n", findDebtFree(creditCardDebts));
-        System.out.println("=========================================");
+        printUSReport(numberOfCustomers, customerNames, creditCardDebts, searchPhrase, debtLimit);
     }
 
     // Fetches the number of customers from the user
@@ -173,5 +165,33 @@ public class Lab2 {
         }
 
         return count;
+    }
+
+    public static void printUSReport(int numberOfCustomers, String highestDebtCustomer, int searchPhraseCount,
+            String searchPhrase, int debtLimit,
+            int overLimitCount, int debtFreeCount) {
+        System.out.println("=========================================");
+        System.out.println("U.S. Report");
+        System.out.printf("Customers: %d\n", numberOfCustomers);
+        System.out.printf("Highest debt: %s\n", highestDebtCustomer);
+        System.out.printf("Number of customers whose names that start with \"%s\": %d\n", searchPhrase,
+                searchPhraseCount);
+        System.out.printf("Customers with debt over $%d: %d\n", debtLimit, overLimitCount);
+        System.out.printf("Customers debt free: %d\n", debtFreeCount);
+        System.out.println("=========================================");
+    }
+
+    public static void printUSReport(int numberOfCustomers, String[] customerNames, int[] creditCardDebts,
+            String searchPhrase,
+            int debtLimit) {
+        System.out.println("=========================================");
+        System.out.println("U.S. Report");
+        System.out.printf("Customers: %d\n", numberOfCustomers);
+        System.out.printf("Highest debt: %s\n", findHighestDebt(customerNames, creditCardDebts));
+        System.out.printf("Customers whose names that start with \"%s\": %d\n", searchPhrase,
+                findSearchPhrase(customerNames, searchPhrase));
+        System.out.printf("Customers with debt over $%d: %d\n", debtLimit, findOverLimit(creditCardDebts, debtLimit));
+        System.out.printf("Customers debt free: %d\n", findDebtFree(creditCardDebts));
+        System.out.println("=========================================");
     }
 }
