@@ -56,6 +56,8 @@ public class Lab2 {
 
         // Print results
         printUSReport(numberOfCustomers, customerNames, creditCardDebts, searchPhrase, debtLimit);
+        printStateReport(customerNames, creditCardDebts, searchPhrase, debtLimit, states,
+                stateAbbreviation);
     }
 
     // Fetches the number of customers from the user
@@ -167,20 +169,7 @@ public class Lab2 {
         return count;
     }
 
-    public static void printUSReport(int numberOfCustomers, String highestDebtCustomer, int searchPhraseCount,
-            String searchPhrase, int debtLimit,
-            int overLimitCount, int debtFreeCount) {
-        System.out.println("=========================================");
-        System.out.println("U.S. Report");
-        System.out.printf("Customers: %d\n", numberOfCustomers);
-        System.out.printf("Highest debt: %s\n", highestDebtCustomer);
-        System.out.printf("Number of customers whose names that start with \"%s\": %d\n", searchPhrase,
-                searchPhraseCount);
-        System.out.printf("Customers with debt over $%d: %d\n", debtLimit, overLimitCount);
-        System.out.printf("Customers debt free: %d\n", debtFreeCount);
-        System.out.println("=========================================");
-    }
-
+    // Prints results for US
     public static void printUSReport(int numberOfCustomers, String[] customerNames, int[] creditCardDebts,
             String searchPhrase,
             int debtLimit) {
@@ -192,6 +181,47 @@ public class Lab2 {
                 findSearchPhrase(customerNames, searchPhrase));
         System.out.printf("Customers with debt over $%d: %d\n", debtLimit, findOverLimit(creditCardDebts, debtLimit));
         System.out.printf("Customers debt free: %d\n", findDebtFree(creditCardDebts));
+        System.out.println("=========================================");
+    }
+
+    // Prints results for a specific state
+    public static void printStateReport(String[] customerNames, int[] creditCardDebts,
+            String searchPhrase,
+            int debtLimit, String[] states, String stateAbbreviation) {
+
+        int filteredNumberOfCustomers = 0;
+        for (int i = 0; i < states.length; i++) {
+            if (states[i].equals(stateAbbreviation)) {
+                filteredNumberOfCustomers++;
+            }
+        }
+
+        String[] filteredCustomerNames = new String[filteredNumberOfCustomers];
+        int count = 0;
+        for (int i = 0; i < customerNames.length; i++) {
+            if (states[i].equals(stateAbbreviation)) {
+                filteredCustomerNames[count] = customerNames[i];
+                count++;
+            }
+        }
+
+        int[] filteredCreditCardDebts = new int[filteredNumberOfCustomers];
+        count = 0;
+        for (int i = 0; i < creditCardDebts.length; i++) {
+            if (states[i].equals(stateAbbreviation)) {
+                filteredCreditCardDebts[count] = creditCardDebts[i];
+                count++;
+            }
+        }
+
+        System.out.printf("%s Report\n", stateAbbreviation);
+        System.out.printf("Customers: %d\n", filteredNumberOfCustomers);
+        System.out.printf("Highest debt: %s\n", findHighestDebt(filteredCustomerNames, filteredCreditCardDebts));
+        System.out.printf("Customers whose names that start with \"%s\": %d\n", searchPhrase,
+                findSearchPhrase(filteredCustomerNames, searchPhrase));
+        System.out.printf("Customers with debt over $%d: %d\n", debtLimit, findOverLimit(
+                filteredCreditCardDebts, debtLimit));
+        System.out.printf("Customers debt free: %d\n", findDebtFree(filteredCreditCardDebts));
         System.out.println("=========================================");
     }
 }
