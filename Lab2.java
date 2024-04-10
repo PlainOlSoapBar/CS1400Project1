@@ -60,7 +60,9 @@ public class Lab2 {
         System.out.printf("Customers: %d\n", numberOfCustomers);
         System.out.printf("Highest debt: %s\n", findHighestDebt(customerNames, creditCardDebts));
         System.out.printf("Number of customers whose names that start with \"%s\": %d\n", searchPhrase,
-                findNumberOfCustomersWithSearchPhrase(customerNames, searchPhrase));
+                findSearchPhrase(customerNames, searchPhrase));
+        System.out.printf("Customers with debt over $%d: %d\n", debtLimit, findOverLimit(creditCardDebts, debtLimit));
+        System.out.printf("Customers debt free: %d\n", findDebtFree(creditCardDebts));
         System.out.println("=========================================");
     }
 
@@ -135,15 +137,41 @@ public class Lab2 {
     }
 
     // Returns the number of customers whose names start with the search phrase
-    public static int findNumberOfCustomersWithSearchPhrase(String[] customerNames, String searchPhrase) {
-        int numberOfCustomersWithSearchPhrase = 0;
+    public static int findSearchPhrase(String[] customerNames, String searchPhrase) {
+        int count = 0;
 
         for (int i = 0; i < customerNames.length; i++) {
             if (customerNames[i].startsWith(searchPhrase)) {
-                numberOfCustomersWithSearchPhrase++;
+                count++;
             }
         }
 
-        return numberOfCustomersWithSearchPhrase;
+        return count;
+    }
+
+    // Returns the number of customers with debt over the debt limit
+    public static int findOverLimit(int[] creditCardDebts, int debtLimit) {
+        int count = 0;
+
+        for (int i = 0; i < creditCardDebts.length; i++) {
+            if (creditCardDebts[i] > debtLimit) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    // Returns the number of customers debt free
+    public static int findDebtFree(int[] creditCardDebts) {
+        int count = 0;
+
+        for (int i = 0; i < creditCardDebts.length; i++) {
+            if (creditCardDebts[i] == 0) {
+                count++;
+            }
+        }
+
+        return count;
     }
 }
