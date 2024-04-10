@@ -11,7 +11,7 @@ public class Lab2 {
         Scanner scnr = new Scanner(System.in);
 
         // Prompt user for inputs
-        int numberOfCustomers = fetchNumberOfCustomers(scnr); // Max 40
+        int numberOfCustomers = fetchNumberOfCustomers(scnr); // Max 70
         int debtLimit = fetchDebtLimit(scnr);
         String searchPhrase = fetchSearchPhrase(scnr);
         String stateAbbreviation = fetchStateAbbreviation(scnr);
@@ -54,19 +54,22 @@ public class Lab2 {
             e.printStackTrace();
         }
 
+        // Print results
+        System.out.println("=========================================");
         System.out.println("U.S. Report");
         System.out.printf("Customers: %d\n", numberOfCustomers);
         System.out.printf("Highest debt: %s\n", findHighestDebt(customerNames, creditCardDebts));
         System.out.printf("Number of customers whose names that start with \"%s\": %d\n", searchPhrase,
                 findNumberOfCustomersWithSearchPhrase(customerNames, searchPhrase));
+        System.out.println("=========================================");
     }
 
     // Fetches the number of customers from the user
     public static int fetchNumberOfCustomers(Scanner scnr) {
         int numberOfCustomers = 0;
-        System.out.print("Enter the number of customers (Max 40): ");
+        System.out.print("Enter the number of customers (Max 70): ");
         numberOfCustomers = scnr.nextInt();
-        if (numberOfCustomers < 1 || 40 < numberOfCustomers) {
+        if (numberOfCustomers < 1 || 70 < numberOfCustomers) {
             System.out.println("Invalid number of customers. Please enter a number between 1 and 40.");
             return fetchNumberOfCustomers(scnr);
         }

@@ -1,41 +1,71 @@
 CustomerName|CreditCardDebt|State
-John Smith|1500|New York
-Sarah Johnson|0|California
-Michael Adams|500|Texas
-Emily Smith|0|Florida
-Samuel Brown|2000|California
-Samantha White|0|Texas
-David Lee|1000|New York
-Michelle Garcia|0|Florida
-Steven Martinez|750|Texas
-Sophia Rodriguez|0|California
-Daniel Hernandez|1200|New York
-Alexis Wilson|0|Texas
-Andrew Nguyen|800|California
-Gabriella King|0|Florida
-Ryan Thompson|250|Texas
-Brianna Lewis|0|New York
-Justin Hall|1800|California
-Lauren Allen|0|Florida
-Nathan Scott|600|Texas
-Olivia Green|0|New York
-Matthew Stewart|950|California
-Ava Turner|0|Texas
-Christopher Price|1300|New York
-Hailey Powell|0|Florida
-Joshua Lopez|850|Texas
-Ella Cooper|0|California
-Brandon Hill|1600|Florida
-Kayla Ward|0|Texas
-Jacob Morris|700|New York
-Madison Ross|0|California
-William Baker|1100|Texas
-Victoria Coleman|0|Florida
-Ethan Rivera|1050|New York
-Mia Bailey|0|California
-James Howard|1400|Texas
-Chloe Bell|0|Florida
-Dylan Long|800|New York
-Zoe Murphy|0|California
-Benjamin Nelson|1150|Texas
-Grace Gonzales|0|Florida
+John Smith|1500|NY
+Sarah Johnson|0|CA
+Michael Adams|500|TX
+Emily Smith|0|FL
+Samuel Brown|2000|CA
+Samantha White|0|TX
+David Lee|1000|NY
+Michelle Garcia|0|FL
+Steven Martinez|750|TX
+Sophia Rodriguez|0|CA
+Daniel Hernandez|1200|NY
+Alexis Wilson|0|TX
+Andrew Nguyen|800|CA
+Gabriella King|0|FL
+Ryan Thompson|250|TX
+Brianna Lewis|0|NY
+Justin Hall|1800|CA
+Lauren Allen|0|FL
+Nathan Scott|600|TX
+Olivia Green|0|NY
+Matthew Stewart|950|CA
+Ava Turner|0|TX
+Christopher Price|1300|NY
+Hailey Powell|0|FL
+Joshua Lopez|850|TX
+Ella Cooper|0|CA
+Brandon Hill|1600|FL
+Kayla Ward|0|TX
+Jacob Morris|700|NY
+Madison Ross|0|CA
+William Baker|1100|TX
+Victoria Coleman|0|FL
+Ethan Rivera|1050|NY
+Mia Bailey|0|CA
+James Howard|1400|TX
+Chloe Bell|0|FL
+Dylan Long|800|NY
+Zoe Murphy|0|CA
+Benjamin Nelson|1150|TX
+Grace Gonzales|0|FL
+Olivia Johnson|0|NY
+Liam Martinez|1420|CA
+Emma Smith|0|TX
+Noah Brown|2150|FL
+Ava Davis|890|CA
+William Rodriguez|0|TX
+Sophia Wilson|740|NY
+Mason Taylor|0|FL
+Isabella Lopez|960|CA
+James Harris|1820|NY
+Charlotte Clark|0|TX
+Benjamin Lee|570|FL
+Amelia Turner|0|CA
+Lucas Martinez|1020|TX
+Mia Moore|0|NY
+Oliver Jones|340|FL
+Evelyn Anderson|1950|CA
+Alexander White|0|TX
+Harper Martinez|640|NY
+Michael Thomas|0|FL
+Emily Rodriguez|810|NY
+Ethan Moore|0|CA
+Madison Taylor|1130|TX
+Emma Wilson|0|NY
+Jacob Harris|450|FL
+Sophia Clark|0|CA
+Mason Turner|720|TX
+Ava Anderson|1560|NY
+William Lopez|0|FL
+Olivia Thompson|890|CA
