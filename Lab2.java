@@ -54,12 +54,11 @@ public class Lab2 {
             e.printStackTrace();
         }
 
-        for (int i = 0; i < numberOfCustomers; i++) {
-            System.out.println("Customer: " + customerNames[i]);
-            System.out.println("Debt: $" + creditCardDebts[i]);
-            System.out.println("State: " + states[i]);
-            System.out.println();
-        }
+        System.out.println("U.S. Report");
+        System.out.printf("Customers: %d\n", numberOfCustomers);
+        System.out.printf("Highest debt: %s\n", findHighestDebt(customerNames, creditCardDebts));
+        System.out.printf("Number of customers whose names that start with \"%s\": %d\n", searchPhrase,
+                findNumberOfCustomersWithSearchPhrase(customerNames, searchPhrase));
     }
 
     // Fetches the number of customers from the user
@@ -115,5 +114,33 @@ public class Lab2 {
     // Capitalizes the first letter of a string
     public static String capitalize(String str) {
         return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+    }
+
+    // Returns the name of the customer with the highest debt
+    public static String findHighestDebt(String[] customerNames, int[] creditCardDebts) {
+        int highestDebt = 0;
+        String highestDebtCustomer = "";
+
+        for (int i = 0; i < creditCardDebts.length; i++) {
+            if (creditCardDebts[i] > highestDebt) {
+                highestDebt = creditCardDebts[i];
+                highestDebtCustomer = customerNames[i];
+            }
+        }
+
+        return highestDebtCustomer;
+    }
+
+    // Returns the number of customers whose names start with the search phrase
+    public static int findNumberOfCustomersWithSearchPhrase(String[] customerNames, String searchPhrase) {
+        int numberOfCustomersWithSearchPhrase = 0;
+
+        for (int i = 0; i < customerNames.length; i++) {
+            if (customerNames[i].startsWith(searchPhrase)) {
+                numberOfCustomersWithSearchPhrase++;
+            }
+        }
+
+        return numberOfCustomersWithSearchPhrase;
     }
 }
